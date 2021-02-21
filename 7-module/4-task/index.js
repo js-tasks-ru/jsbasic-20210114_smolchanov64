@@ -2,10 +2,6 @@ import createElement from '../../assets/lib/create-element.js';
 
 export default class StepSlider {
   constructor({ steps, value = 0 }) {
-<<<<<<< HEAD
-    
-  }
-=======
     this.steps = steps;
     this.segments = steps - 1;
     this.render();
@@ -130,4 +126,3 @@ export default class StepSlider {
   }
 
 }
->>>>>>> 536a2f22f4f3629edead11b7da2b1a053fc10a5c

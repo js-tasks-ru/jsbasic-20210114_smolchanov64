@@ -38,8 +38,8 @@ export default class ProductGrid {
     if (this.filters.vegeterianOnly && !product.vegeterian) {      
       return false;
     }
-    if (this.filters.maxSpiciness 
-      && (!isFinite(product.spiciness) || product.spiciness > this.filters.maxSpiciness)) {      
+    if (isFinite(this.filters.maxSpiciness) 
+      && (!isFinite(product.spiciness) || product.spiciness > this.filters.maxSpiciness)) {
         return false;
     }
     if (this.filters.category && (product.category !== this.filters.category)) {      

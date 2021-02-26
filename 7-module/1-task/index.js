@@ -24,6 +24,7 @@ export default class RibbonMenu {
       if (!category.id) {
         categoryRef.classList.add('ribbon__item_active');
         this.activeItem = categoryRef;
+        this.value = '';
       }
       this.inner.append(categoryRef);
     }
@@ -56,9 +57,11 @@ export default class RibbonMenu {
       this.activeItem.classList.remove('ribbon__item_active');
       categoryRef.classList.add('ribbon__item_active');
       this.activeItem = categoryRef;
+
+      this.value = categoryRef.dataset.id;
       
       let customEvent = new CustomEvent("ribbon-select", 
-        { detail: categoryRef.dataset.id, bubbles: true });
+        { detail: this.value, bubbles: true });
       this.elem.dispatchEvent(customEvent);
 
       return;
